@@ -35,6 +35,7 @@
             this.lblDeuda = new System.Windows.Forms.Label();
             this.txtDeuda = new System.Windows.Forms.TextBox();
             this.btnGrabar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -94,11 +95,21 @@
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(125, 184);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.txtDeuda);
             this.Controls.Add(this.lblDeuda);
@@ -123,5 +134,6 @@
         private System.Windows.Forms.Label lblDeuda;
         private System.Windows.Forms.TextBox txtDeuda;
         private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.Button button1;
     }
 }
