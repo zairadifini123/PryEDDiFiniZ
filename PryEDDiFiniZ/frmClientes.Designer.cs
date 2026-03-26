@@ -35,7 +35,11 @@
             this.lblDeuda = new System.Windows.Forms.Label();
             this.txtDeuda = new System.Windows.Forms.TextBox();
             this.btnGrabar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeuda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -51,14 +55,14 @@
             // 
             this.txtCodigo.Location = new System.Drawing.Point(280, 9);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(128, 20);
             this.txtCodigo.TabIndex = 1;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(62, 37);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(318, 20);
+            this.txtNombre.Size = new System.Drawing.Size(346, 20);
             this.txtNombre.TabIndex = 3;
             // 
             // lblNombre
@@ -83,33 +87,55 @@
             // 
             this.txtDeuda.Location = new System.Drawing.Point(280, 72);
             this.txtDeuda.Name = "txtDeuda";
-            this.txtDeuda.Size = new System.Drawing.Size(100, 20);
+            this.txtDeuda.Size = new System.Drawing.Size(128, 20);
             this.txtDeuda.TabIndex = 5;
             // 
             // btnGrabar
             // 
             this.btnGrabar.Location = new System.Drawing.Point(280, 111);
             this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(100, 22);
+            this.btnGrabar.Size = new System.Drawing.Size(128, 22);
             this.btnGrabar.TabIndex = 6;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // dgvClientes
             // 
-            this.button1.Location = new System.Drawing.Point(125, 184);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCodigo,
+            this.colNombre,
+            this.colDeuda});
+            this.dgvClientes.Location = new System.Drawing.Point(15, 164);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(393, 150);
+            this.dgvClientes.TabIndex = 7;
+            // 
+            // colCodigo
+            // 
+            this.colCodigo.HeaderText = "Código";
+            this.colCodigo.Name = "colCodigo";
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.Width = 150;
+            // 
+            // colDeuda
+            // 
+            this.colDeuda.HeaderText = "Deuda";
+            this.colDeuda.Name = "colDeuda";
             // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(427, 337);
+            this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.txtDeuda);
             this.Controls.Add(this.lblDeuda);
@@ -120,6 +146,7 @@
             this.Name = "frmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmClientes";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,6 +161,9 @@
         private System.Windows.Forms.Label lblDeuda;
         private System.Windows.Forms.TextBox txtDeuda;
         private System.Windows.Forms.Button btnGrabar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDeuda;
     }
 }

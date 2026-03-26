@@ -17,11 +17,7 @@ namespace PryEDDiFiniZ
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
+  
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -35,14 +31,26 @@ namespace PryEDDiFiniZ
 
         private void coloresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmColores c = new frmColores();
-            c.ShowDialog();
+            frmColores v = new frmColores();
+            v.ShowDialog();
         }
 
         private void mesesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmMeses m = new frmMeses();
-            m.ShowDialog();
+            frmMeses v = new frmMeses();
+            v.ShowDialog();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClientes v = new frmClientes();
+            v.ShowDialog();
+        }
+
+        private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAlumnos v = new frmAlumnos();
+            v.ShowDialog();
         }
     }
 }
