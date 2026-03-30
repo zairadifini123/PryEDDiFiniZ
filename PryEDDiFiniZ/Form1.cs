@@ -52,5 +52,10 @@ namespace PryEDDiFiniZ
             frmAlumnos v = new frmAlumnos();
             v.ShowDialog();
         }
+
+        private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

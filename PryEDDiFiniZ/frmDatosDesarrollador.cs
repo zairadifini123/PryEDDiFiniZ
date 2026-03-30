@@ -16,5 +16,10 @@ namespace PryEDDiFiniZ
         {
             InitializeComponent();
         }
+
+        private void frmDatosDesarrollador_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
