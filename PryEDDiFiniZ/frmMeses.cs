@@ -16,5 +16,31 @@ namespace PryEDDiFiniZ
         {
             InitializeComponent();
         }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            clsArchivo x = new clsArchivo();
+            x.NombreArchivo = "Meses.csv";
+            x.Grabar(txtNombre.Text);
+            x.Recorrer(lstMeses);
+            txtNombre.Text = "";
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "")
+            {
+                btnGrabar.Enabled = false;
+            }
+            else
+            {
+                btnGrabar.Enabled = true;
+            }
+        }
+
+        private void frmMeses_Load(object sender, EventArgs e)
+        {
+            btnGrabar.Enabled = false;
+        }
     }
 }

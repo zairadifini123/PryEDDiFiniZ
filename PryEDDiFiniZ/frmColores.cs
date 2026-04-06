@@ -20,8 +20,9 @@ namespace PryEDDiFiniZ
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             clsArchivo x = new clsArchivo();
+            x.NombreArchivo = "Colores.csv";
             x.Grabar(txtNombre.Text);
-            MessageBox.Show("Color grabado correctamente");
+            x.Recorrer(lstColores);
             txtNombre.Text = "";
         }
 
