@@ -1,6 +1,6 @@
 ﻿namespace PryEDDiFiniZ
 {
-    partial class Form1
+    partial class frmInicio
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -45,6 +45,7 @@
             this.estructurasNoLinealesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.árbolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grafosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.carrerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,7 +92,8 @@
             this.coloresToolStripMenuItem,
             this.mesesToolStripMenuItem,
             this.clientesToolStripMenuItem,
-            this.alumnosToolStripMenuItem});
+            this.alumnosToolStripMenuItem,
+            this.carrerasToolStripMenuItem});
             this.programaciónOrientadaAObjetosToolStripMenuItem.Name = "programaciónOrientadaAObjetosToolStripMenuItem";
             this.programaciónOrientadaAObjetosToolStripMenuItem.Size = new System.Drawing.Size(198, 20);
             this.programaciónOrientadaAObjetosToolStripMenuItem.Text = "Programación orientada a objetos";
@@ -99,28 +101,28 @@
             // coloresToolStripMenuItem
             // 
             this.coloresToolStripMenuItem.Name = "coloresToolStripMenuItem";
-            this.coloresToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.coloresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.coloresToolStripMenuItem.Text = "Colores..";
             this.coloresToolStripMenuItem.Click += new System.EventHandler(this.coloresToolStripMenuItem_Click);
             // 
             // mesesToolStripMenuItem
             // 
             this.mesesToolStripMenuItem.Name = "mesesToolStripMenuItem";
-            this.mesesToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.mesesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mesesToolStripMenuItem.Text = "Meses..";
             this.mesesToolStripMenuItem.Click += new System.EventHandler(this.mesesToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientesToolStripMenuItem.Text = "Clientes...";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // alumnosToolStripMenuItem
             // 
             this.alumnosToolStripMenuItem.Name = "alumnosToolStripMenuItem";
-            this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alumnosToolStripMenuItem.Text = "Alumnos...";
             this.alumnosToolStripMenuItem.Click += new System.EventHandler(this.alumnosToolStripMenuItem_Click);
             // 
@@ -180,14 +182,21 @@
             this.grafosToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.grafosToolStripMenuItem.Text = "Grafos...";
             // 
-            // Form1
+            // carrerasToolStripMenuItem
+            // 
+            this.carrerasToolStripMenuItem.Name = "carrerasToolStripMenuItem";
+            this.carrerasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.carrerasToolStripMenuItem.Text = "Carreras...";
+            this.carrerasToolStripMenuItem.Click += new System.EventHandler(this.carrerasToolStripMenuItem_Click);
+            // 
+            // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "frmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura de datos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -217,6 +226,7 @@
         private System.Windows.Forms.ToolStripMenuItem estructurasNoLinealesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem árbolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem grafosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem carrerasToolStripMenuItem;
     }
 }
 

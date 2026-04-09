@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PryEDDiFiniZ
 {
-    public partial class Form1 : Form
+    public partial class frmInicio : Form
     {
-        public Form1()
+        public frmInicio()
         {
             InitializeComponent();
         }
@@ -56,6 +56,12 @@ namespace PryEDDiFiniZ
         private void sistemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void carrerasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCarreras v = new frmCarreras();
+            v.ShowDialog();
         }
     }
 }
