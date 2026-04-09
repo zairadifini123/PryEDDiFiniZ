@@ -42,5 +42,13 @@ namespace PryEDDiFiniZ
         {
             btnGrabar.Enabled = false;
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            clsArchivo x = new clsArchivo();
+            x.NombreArchivo = "Carreras.csv";
+            x.LimpiarTodo();
+            x.Recorrer(lstCarrera);
+        }
     }
 }

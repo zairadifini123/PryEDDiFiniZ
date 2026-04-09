@@ -41,5 +41,13 @@ namespace PryEDDiFiniZ
         {
             btnGrabar.Enabled = false;
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            clsArchivo x = new clsArchivo();
+            x.NombreArchivo = "Colores.csv";
+            x.LimpiarTodo();
+            x.Recorrer(lstColores);
+        }
     }
 }

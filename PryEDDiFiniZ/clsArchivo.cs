@@ -25,6 +25,17 @@ namespace PryEDDiFiniZ
             AD.Close();
         }
 
+        public void Grabar(String dato, String dato2, String dato3)
+        {
+            StreamWriter AD = new StreamWriter(NombreArchivo, true);
+            AD.Write(dato);
+            AD.Write(";");
+            AD.Write(dato2);
+            AD.Write(";");
+            AD.WriteLine(dato3);
+            AD.Close();
+        }
+
         public void Recorrer(ListBox lstDatos)
         {
             lstDatos.Items.Clear();
@@ -64,6 +75,12 @@ namespace PryEDDiFiniZ
                 dgvDatos.Rows.Add(DatoLeido);
                 DatoLeido = AD.ReadLine();
             }
+            AD.Close();
+        }
+
+        public void LimpiarTodo()
+        {
+            StreamWriter AD = new StreamWriter(NombreArchivo, false);
             AD.Close();
         }
     }

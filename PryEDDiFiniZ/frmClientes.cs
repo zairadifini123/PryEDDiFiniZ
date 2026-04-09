@@ -16,5 +16,12 @@ namespace PryEDDiFiniZ
         {
             InitializeComponent();
         }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            clsArchivo x = new clsArchivo();
+            x.NombreArchivo = "Clientes.csv";
+            x.Grabar(txtCodigo.Text, txtNombre.Text, txtDeuda.Text);
+        }
     }
 }
