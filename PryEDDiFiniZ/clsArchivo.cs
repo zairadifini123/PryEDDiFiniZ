@@ -52,8 +52,8 @@ namespace PryEDDiFiniZ
 
         public void Recorrer(ComboBox cmbDatos)
         {
-            cmbDatos.Items.Clear();
             String DatoLeido = "";
+            cmbDatos.Items.Clear();
             StreamReader AD = new StreamReader(NombreArchivo);
             DatoLeido = AD.ReadLine();
             while (DatoLeido != null)
@@ -61,18 +61,19 @@ namespace PryEDDiFiniZ
                 cmbDatos.Items.Add(DatoLeido);
                 DatoLeido = AD.ReadLine();
             }
+            cmbDatos.SelectedIndex = 0;
             AD.Close();
         }
 
         public void Recorrer(DataGridView dgvDatos)
         {
+            String DatoLeido;
             dgvDatos.Rows.Clear();
-            String DatoLeido = "";
             StreamReader AD = new StreamReader(NombreArchivo);
             DatoLeido = AD.ReadLine();
             while (DatoLeido != null)
             {
-                dgvDatos.Rows.Add(DatoLeido);
+                dgvDatos.Rows.Add(DatoLeido.Split(';'));
                 DatoLeido = AD.ReadLine();
             }
             AD.Close();

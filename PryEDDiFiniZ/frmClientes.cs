@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace PryEDDiFiniZ
 {
     public partial class frmClientes : Form
@@ -22,6 +22,17 @@ namespace PryEDDiFiniZ
             clsArchivo x = new clsArchivo();
             x.NombreArchivo = "Clientes.csv";
             x.Grabar(txtCodigo.Text, txtNombre.Text, txtDeuda.Text);
+            x.Recorrer(dgvClientes);
+            txtCodigo.Clear();
+            txtNombre.Clear();
+            txtDeuda.Clear();
+        }
+
+        private void frmClientes_Load(object sender, EventArgs e)
+        {
+            clsArchivo X = new clsArchivo();
+            X.NombreArchivo = "Clientes.CSV";
+            if (File.Exists(X.NombreArchivo)) X.Recorrer(dgvClientes); 
         }
     }
 }
