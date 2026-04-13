@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCarreras));
             this.lstCarrera = new System.Windows.Forms.ListBox();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.txtCarrera = new System.Windows.Forms.TextBox();
@@ -91,9 +92,10 @@
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.txtCarrera);
             this.Controls.Add(this.lblCarrera);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCarreras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCarreras";
+            this.Text = "Carreras";
             this.Load += new System.EventHandler(this.frmCarreras_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

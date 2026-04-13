@@ -67,7 +67,7 @@ namespace PryEDDiFiniZ
 
         public void Recorrer(DataGridView dgvDatos)
         {
-            String DatoLeido;
+            String DatoLeido = "";
             dgvDatos.Rows.Clear();
             StreamReader AD = new StreamReader(NombreArchivo);
             DatoLeido = AD.ReadLine();

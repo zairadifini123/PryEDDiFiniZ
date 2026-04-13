@@ -31,6 +31,7 @@ namespace PryEDDiFiniZ
 
         private void frmAlumnos_Load(object sender, EventArgs e)
         {
+            cmbCarrera.DropDownStyle = ComboBoxStyle.DropDownList;
             clsArchivo objCarrera = new clsArchivo();
             objCarrera.NombreArchivo = "Carreras.csv";
             if (File.Exists(objCarrera.NombreArchivo)) objCarrera.Recorrer(cmbCarrera);
@@ -42,6 +43,24 @@ namespace PryEDDiFiniZ
 
         private void cmbCarrera_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquea la tecla
+            }
+
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquea la tecla
+            }
 
         }
     }
