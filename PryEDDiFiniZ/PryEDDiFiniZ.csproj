@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsArchivo.cs" />
+    <Compile Include="clsNodo.cs" />
     <Compile Include="frmCarreras.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -46,11 +46,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lstCola = new System.Windows.Forms.ListBox();
             this.dgvCola = new System.Windows.Forms.DataGridView();
             this.ColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lstCola = new System.Windows.Forms.ListBox();
             this.pctCola = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -228,14 +228,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Listado en una Lista y una Grilla";
             // 
-            // lstCola
-            // 
-            this.lstCola.FormattingEnabled = true;
-            this.lstCola.Location = new System.Drawing.Point(6, 19);
-            this.lstCola.Name = "lstCola";
-            this.lstCola.Size = new System.Drawing.Size(198, 212);
-            this.lstCola.TabIndex = 0;
-            // 
             // dgvCola
             // 
             this.dgvCola.AllowUserToAddRows = false;
@@ -272,6 +264,14 @@
             this.ColTramite.ReadOnly = true;
             this.ColTramite.Width = 80;
             // 
+            // lstCola
+            // 
+            this.lstCola.FormattingEnabled = true;
+            this.lstCola.Location = new System.Drawing.Point(6, 19);
+            this.lstCola.Name = "lstCola";
+            this.lstCola.Size = new System.Drawing.Size(198, 212);
+            this.lstCola.TabIndex = 0;
+            // 
             // pctCola
             // 
             this.pctCola.Image = ((System.Drawing.Image)(resources.GetObject("pctCola.Image")));
@@ -296,6 +296,7 @@
             this.Name = "frmCola";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinámica Lineal - Cola";
+            this.Load += new System.EventHandler(this.frmCola_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
