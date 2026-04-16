@@ -72,10 +72,11 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(27, 204);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 76);
+            this.label1.Size = new System.Drawing.Size(286, 95);
             this.label1.TabIndex = 5;
             this.label1.Text = "Materia: Estructura de datos.\r\nCarrera: Analista en Sistemas de información.\r\nNom" +
-    "bre de alumno: Zaira Di Fini\r\nDNI: 47350879";
+    "bre de alumno: Zaira Di Fini\r\nDNI: 47350879\r\nProgramado con C# en Visual Studio\r" +
+    "\n";
             // 
             // frmDatosDesarrollador
             // 
