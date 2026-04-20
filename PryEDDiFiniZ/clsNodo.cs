@@ -15,8 +15,8 @@ namespace PryEDDiFiniZ
 
         public Int32 Codigo
         {
-            get { return cod; }
-            set { cod = value; }
+            get { return cod; } // darselo a la interfaz
+            set { cod = value; } //pedir valor a un campo
         }
 
         public String Nombre
