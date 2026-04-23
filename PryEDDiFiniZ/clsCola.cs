@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PryEDDiFiniZ
 {
@@ -82,6 +83,24 @@ namespace PryEDDiFiniZ
                 Combo.Items.Add(aux.Nombre);
                 aux = aux.Siguiente;
             }
+        }
+
+        public void Recorrer(string NombreArchivo)
+        {
+            clsNodo aux = Primero;
+            StreamWriter AD = new StreamWriter(NombreArchivo, false, Encoding.UTF8);
+            AD.WriteLine("Lista de espera\n");
+            AD.WriteLine("Codigo;Nombre;Tramite");
+            while (aux != null)
+            {
+                AD.Write(aux.Codigo);
+                AD.Write(";");
+                AD.Write(aux.Nombre);
+                AD.Write(";");
+                AD.Write(aux.Tramite);
+                aux = aux.Siguiente;
+            }
+            AD.Close();
         }
     }
 }
