@@ -49,8 +49,8 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.rdbAscendente = new System.Windows.Forms.RadioButton();
             this.rdbDescendente = new System.Windows.Forms.RadioButton();
+            this.rdbAscendente = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pctCola)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).BeginInit();
@@ -250,17 +250,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Elemento a eliminar";
             // 
-            // rdbAscendente
-            // 
-            this.rdbAscendente.AutoSize = true;
-            this.rdbAscendente.Location = new System.Drawing.Point(9, 18);
-            this.rdbAscendente.Name = "rdbAscendente";
-            this.rdbAscendente.Size = new System.Drawing.Size(82, 17);
-            this.rdbAscendente.TabIndex = 0;
-            this.rdbAscendente.TabStop = true;
-            this.rdbAscendente.Text = "Ascendente";
-            this.rdbAscendente.UseVisualStyleBackColor = true;
-            // 
             // rdbDescendente
             // 
             this.rdbDescendente.AutoSize = true;
@@ -271,6 +260,17 @@
             this.rdbDescendente.TabStop = true;
             this.rdbDescendente.Text = "Descendente";
             this.rdbDescendente.UseVisualStyleBackColor = true;
+            // 
+            // rdbAscendente
+            // 
+            this.rdbAscendente.AutoSize = true;
+            this.rdbAscendente.Location = new System.Drawing.Point(9, 18);
+            this.rdbAscendente.Name = "rdbAscendente";
+            this.rdbAscendente.Size = new System.Drawing.Size(82, 17);
+            this.rdbAscendente.TabIndex = 0;
+            this.rdbAscendente.TabStop = true;
+            this.rdbAscendente.Text = "Ascendente";
+            this.rdbAscendente.UseVisualStyleBackColor = true;
             // 
             // frmListaDoble
             // 
