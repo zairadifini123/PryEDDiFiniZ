@@ -49,6 +49,7 @@
     <Compile Include="clsArchivo.cs" />
     <Compile Include="clsCola.cs" />
     <Compile Include="clsNodo.cs" />
+    <Compile Include="clsPila.cs" />
     <Compile Include="frmCarreras.cs">
       <SubType>Form</SubType>
     </Compile>

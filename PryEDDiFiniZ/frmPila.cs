@@ -17,6 +17,7 @@ namespace PryEDDiFiniZ
             InitializeComponent();
         }
 
+        clsPila objPila = new clsPila();
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -40,6 +41,45 @@ namespace PryEDDiFiniZ
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true; // Bloquea la tecla
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            clsNodo x = new clsNodo();
+            x.Codigo = Convert.ToInt32(txtCodigo.Text);
+            x.Nombre = txtNombre.Text;
+            x.Tramite = txtTramite.Text;
+
+            objPila.Agregar(x);
+            objPila.Recorrer(dgvPila);
+            objPila.Recorrer(lstPila);
+            objPila.Recorrer("Pila.csv");
+
+            txtCodigo.Text = " ";
+            txtNombre.Text = " ";
+            txtTramite.Text = " ";
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (objPila.Primero != null)
+            {
+                lblCodigo.Text = objPila.Primero.Codigo.ToString();
+                lblNombre.Text = objPila.Primero.Nombre;
+                lblTramite.Text = objPila.Primero.Tramite;
+
+                objPila.Eliminar();
+                objPila.Recorrer(dgvPila);
+                objPila.Recorrer(lstPila);
+                objPila.Recorrer("Pila.csv");
+            }
+            else
+            {
+                txtCodigo.Text = " ";
+                txtNombre.Text = " ";
+                txtTramite.Text = " ";
             }
         }
     }

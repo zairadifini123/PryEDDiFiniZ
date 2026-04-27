@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPila));
             this.pctCola = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvCola = new System.Windows.Forms.DataGridView();
+            this.dgvPila = new System.Windows.Forms.DataGridView();
             this.ColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lstCola = new System.Windows.Forms.ListBox();
+            this.lstPila = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblTramite = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctCola)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPila)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,8 +71,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dgvCola);
-            this.groupBox3.Controls.Add(this.lstCola);
+            this.groupBox3.Controls.Add(this.dgvPila);
+            this.groupBox3.Controls.Add(this.lstPila);
             this.groupBox3.Location = new System.Drawing.Point(12, 193);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(548, 245);
@@ -80,20 +80,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Listado en una Lista y una Grilla";
             // 
-            // dgvCola
+            // dgvPila
             // 
-            this.dgvCola.AllowUserToAddRows = false;
-            this.dgvCola.AllowUserToDeleteRows = false;
-            this.dgvCola.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCola.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPila.AllowUserToAddRows = false;
+            this.dgvPila.AllowUserToDeleteRows = false;
+            this.dgvPila.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPila.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColCodigo,
             this.ColNombre,
             this.ColTramite});
-            this.dgvCola.Location = new System.Drawing.Point(210, 19);
-            this.dgvCola.Name = "dgvCola";
-            this.dgvCola.ReadOnly = true;
-            this.dgvCola.Size = new System.Drawing.Size(332, 212);
-            this.dgvCola.TabIndex = 1;
+            this.dgvPila.Location = new System.Drawing.Point(210, 19);
+            this.dgvPila.Name = "dgvPila";
+            this.dgvPila.ReadOnly = true;
+            this.dgvPila.Size = new System.Drawing.Size(332, 212);
+            this.dgvPila.TabIndex = 1;
             // 
             // ColCodigo
             // 
@@ -116,13 +116,13 @@
             this.ColTramite.ReadOnly = true;
             this.ColTramite.Width = 80;
             // 
-            // lstCola
+            // lstPila
             // 
-            this.lstCola.FormattingEnabled = true;
-            this.lstCola.Location = new System.Drawing.Point(6, 19);
-            this.lstCola.Name = "lstCola";
-            this.lstCola.Size = new System.Drawing.Size(198, 212);
-            this.lstCola.TabIndex = 0;
+            this.lstPila.FormattingEnabled = true;
+            this.lstPila.Location = new System.Drawing.Point(6, 19);
+            this.lstPila.Name = "lstPila";
+            this.lstPila.Size = new System.Drawing.Size(198, 212);
+            this.lstPila.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -175,6 +175,7 @@
             this.btnEliminar.TabIndex = 1;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label4
             // 
@@ -230,6 +231,7 @@
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtTramite
             // 
@@ -301,7 +303,7 @@
             this.Text = "Estructura de datos lineal: Pila";
             ((System.ComponentModel.ISupportInitialize)(this.pctCola)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPila)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -314,11 +316,11 @@
 
         private System.Windows.Forms.PictureBox pctCola;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgvCola;
+        private System.Windows.Forms.DataGridView dgvPila;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTramite;
-        private System.Windows.Forms.ListBox lstCola;
+        private System.Windows.Forms.ListBox lstPila;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblTramite;
         private System.Windows.Forms.Label lblNombre;
