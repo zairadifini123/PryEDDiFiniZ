@@ -74,7 +74,7 @@ namespace PryEDDiFiniZ
             Combo.Items.Clear();
             while (aux != null)
             {
-                Combo.Items.Add(aux.Nombre);
+                Combo.Items.Add(aux.Codigo);
                 aux = aux.Siguiente;
             }
         }
@@ -97,23 +97,29 @@ namespace PryEDDiFiniZ
             AD.Close();
         }
 
-        public void Eliminar(Int32 Codigo)
+        public bool Eliminar(int Codigo)
         {
-            if(Primero.Codigo == Codigo)
+            if (Primero == null) return false;
+
+            if (Primero.Codigo == Codigo)
             {
                 Primero = Primero.Siguiente;
+                return true;
             }
-            else
+
+            clsNodo aux = Primero.Siguiente;
+            clsNodo ant = Primero;
+
+            while (aux != null && aux.Codigo != Codigo)
             {
-                clsNodo aux = Primero;
-                clsNodo ant = Primero; 
-                while (aux.Codigo != Codigo)
-                {
-                    ant = aux;
-                    aux = aux.Siguiente;
-                }
-                ant.Siguiente = aux.Siguiente;
+                ant = aux;
+                aux = aux.Siguiente;
             }
+
+            if (aux == null) return false; 
+
+            ant.Siguiente = aux.Siguiente;
+            return true;
         }
     }
 }

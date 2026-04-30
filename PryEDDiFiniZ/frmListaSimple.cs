@@ -95,21 +95,22 @@ namespace PryEDDiFiniZ
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (objLista.Primero != null)
+            if (cmbCodigo.Text == "")
             {
-                Int32 x = Convert.ToInt32(cmbCodigo.Text);
-                objLista.Eliminar(Convert.ToInt32(txtCodigo.Text));
-                objLista.Recorrer(dgvLista);
-                objLista.Recorrer(lstLista);
-                objLista.Recorrer(cmbCodigo);
-                objLista.Recorrer(Convert.ToInt32(txtCodigo.Text));
+                MessageBox.Show("Seleccione un código.");
+                return;
             }
-            else
-            {
-                MessageBox.Show("La lista está vacia");
-            }
-            btnEliminar.Enabled = false;
 
+            int codigo = Convert.ToInt32(cmbCodigo.Text);
+
+            if (objLista.Eliminar(codigo) == false)
+            {
+                MessageBox.Show("Código no encontrado en la lista.");
+            }
+
+            objLista.Recorrer(lstLista);
+            objLista.Recorrer(cmbCodigo);
+            objLista.Recorrer(dgvLista);
         }
 
     }
