@@ -31,12 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaSimple));
             this.pctCola = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvCola = new System.Windows.Forms.DataGridView();
+            this.dgvLista = new System.Windows.Forms.DataGridView();
             this.ColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lstCola = new System.Windows.Forms.ListBox();
+            this.lstLista = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbCodigo = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -46,11 +48,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbCodigo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctCola)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -67,8 +67,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dgvCola);
-            this.groupBox3.Controls.Add(this.lstCola);
+            this.groupBox3.Controls.Add(this.dgvLista);
+            this.groupBox3.Controls.Add(this.lstLista);
             this.groupBox3.Location = new System.Drawing.Point(12, 193);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(702, 245);
@@ -76,20 +76,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Listado en una Lista y una Grilla";
             // 
-            // dgvCola
+            // dgvLista
             // 
-            this.dgvCola.AllowUserToAddRows = false;
-            this.dgvCola.AllowUserToDeleteRows = false;
-            this.dgvCola.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCola.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvLista.AllowUserToAddRows = false;
+            this.dgvLista.AllowUserToDeleteRows = false;
+            this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColCodigo,
             this.ColNombre,
             this.ColTramite});
-            this.dgvCola.Location = new System.Drawing.Point(311, 19);
-            this.dgvCola.Name = "dgvCola";
-            this.dgvCola.ReadOnly = true;
-            this.dgvCola.Size = new System.Drawing.Size(376, 212);
-            this.dgvCola.TabIndex = 1;
+            this.dgvLista.Location = new System.Drawing.Point(311, 19);
+            this.dgvLista.Name = "dgvLista";
+            this.dgvLista.ReadOnly = true;
+            this.dgvLista.Size = new System.Drawing.Size(376, 212);
+            this.dgvLista.TabIndex = 1;
             // 
             // ColCodigo
             // 
@@ -112,13 +112,13 @@
             this.ColTramite.ReadOnly = true;
             this.ColTramite.Width = 80;
             // 
-            // lstCola
+            // lstLista
             // 
-            this.lstCola.FormattingEnabled = true;
-            this.lstCola.Location = new System.Drawing.Point(6, 19);
-            this.lstCola.Name = "lstCola";
-            this.lstCola.Size = new System.Drawing.Size(299, 212);
-            this.lstCola.TabIndex = 0;
+            this.lstLista.FormattingEnabled = true;
+            this.lstLista.Location = new System.Drawing.Point(6, 19);
+            this.lstLista.Name = "lstLista";
+            this.lstLista.Size = new System.Drawing.Size(299, 212);
+            this.lstLista.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -132,6 +132,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Elemento a eliminar";
             // 
+            // cmbCodigo
+            // 
+            this.cmbCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCodigo.FormattingEnabled = true;
+            this.cmbCodigo.Location = new System.Drawing.Point(66, 89);
+            this.cmbCodigo.Name = "cmbCodigo";
+            this.cmbCodigo.Size = new System.Drawing.Size(95, 21);
+            this.cmbCodigo.TabIndex = 17;
+            this.cmbCodigo.SelectedIndexChanged += new System.EventHandler(this.cmbCodigo_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 90);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 16);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Código:";
+            // 
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(9, 120);
@@ -140,6 +160,7 @@
             this.btnEliminar.TabIndex = 1;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // groupBox1
             // 
@@ -165,6 +186,7 @@
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtTramite
             // 
@@ -172,6 +194,8 @@
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(92, 20);
             this.txtTramite.TabIndex = 5;
+            this.txtTramite.TextChanged += new System.EventHandler(this.txtTramite_TextChanged);
+            this.txtTramite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTramite_KeyPress);
             // 
             // label3
             // 
@@ -189,6 +213,8 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(92, 20);
             this.txtNombre.TabIndex = 3;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label2
             // 
@@ -206,6 +232,8 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(77, 20);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // label1
             // 
@@ -216,24 +244,6 @@
             this.label1.Size = new System.Drawing.Size(54, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Código:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 16);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Código:";
-            // 
-            // cmbCodigo
-            // 
-            this.cmbCodigo.FormattingEnabled = true;
-            this.cmbCodigo.Location = new System.Drawing.Point(66, 89);
-            this.cmbCodigo.Name = "cmbCodigo";
-            this.cmbCodigo.Size = new System.Drawing.Size(95, 21);
-            this.cmbCodigo.TabIndex = 17;
             // 
             // frmListaSimple
             // 
@@ -251,7 +261,7 @@
             this.Text = "Estructura de datos lineal: Lista Simple";
             ((System.ComponentModel.ISupportInitialize)(this.pctCola)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -264,11 +274,11 @@
 
         private System.Windows.Forms.PictureBox pctCola;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgvCola;
+        private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTramite;
-        private System.Windows.Forms.ListBox lstCola;
+        private System.Windows.Forms.ListBox lstLista;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cmbCodigo;
         private System.Windows.Forms.Label label4;
