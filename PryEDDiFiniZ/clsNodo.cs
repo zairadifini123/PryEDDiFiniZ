@@ -12,11 +12,12 @@ namespace PryEDDiFiniZ
         private String nom;
         private String tra;
         private clsNodo sig;
+        private clsNodo ant; 
 
         public Int32 Codigo
         {
-            get { return cod; } // darselo a la interfaz
-            set { cod = value; } //pedir valor a un campo
+            get { return cod; } 
+            set { cod = value; } 
         }
 
         public String Nombre
@@ -34,6 +35,12 @@ namespace PryEDDiFiniZ
         {
             get { return sig; }
             set { sig = value; }
+        }
+
+        public clsNodo Anterior
+        {
+            get { return ant; }
+            set { ant = value; }
         }
     }
 }
