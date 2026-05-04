@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaDoble));
             this.pctCola = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvCola = new System.Windows.Forms.DataGridView();
+            this.dgvListaDoble = new System.Windows.Forms.DataGridView();
             this.ColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lstCola = new System.Windows.Forms.ListBox();
+            this.lstListaDoble = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbCodigo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             this.rdbAscendente = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pctCola)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoble)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -71,8 +71,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dgvCola);
-            this.groupBox3.Controls.Add(this.lstCola);
+            this.groupBox3.Controls.Add(this.dgvListaDoble);
+            this.groupBox3.Controls.Add(this.lstListaDoble);
             this.groupBox3.Location = new System.Drawing.Point(12, 193);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(702, 245);
@@ -80,20 +80,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Listado en una Lista y una Grilla";
             // 
-            // dgvCola
+            // dgvListaDoble
             // 
-            this.dgvCola.AllowUserToAddRows = false;
-            this.dgvCola.AllowUserToDeleteRows = false;
-            this.dgvCola.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCola.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvListaDoble.AllowUserToAddRows = false;
+            this.dgvListaDoble.AllowUserToDeleteRows = false;
+            this.dgvListaDoble.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaDoble.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColCodigo,
             this.ColNombre,
             this.ColTramite});
-            this.dgvCola.Location = new System.Drawing.Point(311, 19);
-            this.dgvCola.Name = "dgvCola";
-            this.dgvCola.ReadOnly = true;
-            this.dgvCola.Size = new System.Drawing.Size(376, 212);
-            this.dgvCola.TabIndex = 1;
+            this.dgvListaDoble.Location = new System.Drawing.Point(311, 19);
+            this.dgvListaDoble.Name = "dgvListaDoble";
+            this.dgvListaDoble.ReadOnly = true;
+            this.dgvListaDoble.Size = new System.Drawing.Size(376, 212);
+            this.dgvListaDoble.TabIndex = 1;
             // 
             // ColCodigo
             // 
@@ -116,13 +116,13 @@
             this.ColTramite.ReadOnly = true;
             this.ColTramite.Width = 80;
             // 
-            // lstCola
+            // lstListaDoble
             // 
-            this.lstCola.FormattingEnabled = true;
-            this.lstCola.Location = new System.Drawing.Point(6, 19);
-            this.lstCola.Name = "lstCola";
-            this.lstCola.Size = new System.Drawing.Size(299, 212);
-            this.lstCola.TabIndex = 0;
+            this.lstListaDoble.FormattingEnabled = true;
+            this.lstListaDoble.Location = new System.Drawing.Point(6, 19);
+            this.lstListaDoble.Name = "lstListaDoble";
+            this.lstListaDoble.Size = new System.Drawing.Size(299, 212);
+            this.lstListaDoble.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -187,6 +187,7 @@
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtTramite
             // 
@@ -194,6 +195,8 @@
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(92, 20);
             this.txtTramite.TabIndex = 5;
+            this.txtTramite.TextChanged += new System.EventHandler(this.txtTramite_TextChanged);
+            this.txtTramite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTramite_KeyPress);
             // 
             // label3
             // 
@@ -211,6 +214,8 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(92, 20);
             this.txtNombre.TabIndex = 3;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label2
             // 
@@ -228,6 +233,8 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(77, 20);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // label1
             // 
@@ -289,7 +296,7 @@
             this.Text = " Estructura lineal: Lista doblemente enlazada";
             ((System.ComponentModel.ISupportInitialize)(this.pctCola)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCola)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaDoble)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -304,11 +311,11 @@
 
         private System.Windows.Forms.PictureBox pctCola;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgvCola;
+        private System.Windows.Forms.DataGridView dgvListaDoble;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTramite;
-        private System.Windows.Forms.ListBox lstCola;
+        private System.Windows.Forms.ListBox lstListaDoble;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cmbCodigo;
         private System.Windows.Forms.Label label4;
