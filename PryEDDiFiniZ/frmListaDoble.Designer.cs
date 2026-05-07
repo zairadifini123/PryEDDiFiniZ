@@ -162,6 +162,7 @@
             this.btnEliminar.TabIndex = 1;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // groupBox1
             // 
@@ -278,6 +279,7 @@
             this.rdbAscendente.TabStop = true;
             this.rdbAscendente.Text = "Ascendente";
             this.rdbAscendente.UseVisualStyleBackColor = true;
+            this.rdbAscendente.CheckedChanged += new System.EventHandler(this.rdbAscendente_CheckedChanged);
             // 
             // frmListaDoble
             // 

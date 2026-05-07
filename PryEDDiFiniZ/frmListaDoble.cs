@@ -85,5 +85,32 @@ namespace PryEDDiFiniZ
                 e.Handled = true; // Bloquea la tecla
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+           if (objLista.Primero != null)
+            {
+                Int32 x = Convert.ToInt32(cmbCodigo.Text);
+                objLista.Eliminar(x);
+                objLista.Recorrer(dgvListaDoble);
+                objLista.Recorrer(lstListaDoble);
+                objLista.Recorrer(cmbCodigo);
+                objLista.Recorrer("ListaDoble.csv");
+            }
+           else
+            {
+                MessageBox.Show("La lista esta vacia");
+            }
+           btnEliminar.Enabled = false;
+        }
+
+        private void rdbAscendente_CheckedChanged(object sender, EventArgs e)
+        {
+            objLista.RecorrerDes(dgvListaDoble);
+            objLista.RecorrerDes(lstListaDoble);
+            objLista.RecorrerDes(cmbCodigo.Text); 
+        }
     }
 }
+
+
