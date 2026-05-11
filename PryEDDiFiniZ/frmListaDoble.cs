@@ -106,9 +106,16 @@ namespace PryEDDiFiniZ
 
         private void rdbAscendente_CheckedChanged(object sender, EventArgs e)
         {
+            objLista.Recorrer(dgvListaDoble);
+            objLista.Recorrer(lstListaDoble);
+            objLista.Recorrer(cmbCodigo.Text); 
+        }
+
+        private void rdbDescendente_CheckedChanged(object sender, EventArgs e)
+        {
             objLista.RecorrerDes(dgvListaDoble);
             objLista.RecorrerDes(lstListaDoble);
-            objLista.RecorrerDes(cmbCodigo.Text); 
+            objLista.RecorrerDes(cmbCodigo.Text);
         }
     }
 }
