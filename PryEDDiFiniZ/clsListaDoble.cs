@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PryEDDiFiniZ
@@ -52,64 +49,94 @@ namespace PryEDDiFiniZ
                     {
                         clsNodo Aux = Primero;
                         clsNodo Ant = Primero;
-                        while (Aux.Codigo < Nuevo.Codigo)
+
+                        while (Aux != null && Aux.Codigo < Nuevo.Codigo)
                         {
                             Ant = Aux;
                             Aux = Aux.Siguiente;
                         }
-                        Ant.Siguiente = Nuevo;
-                        Nuevo.Siguiente = Aux;
-                        Aux.Anterior = Nuevo;
-                        Nuevo.Anterior = Ant;
-                    }
 
+                        Ant.Siguiente = Nuevo;
+                        Nuevo.Anterior = Ant;
+                        Nuevo.Siguiente = Aux;
+
+                        if (Aux != null)
+                        {
+                            Aux.Anterior = Nuevo;
+                        }
+                    }
                 }
             }
         }
 
         public void Eliminar(Int32 Codigo)
         {
-            if(Primero.Codigo == Codigo && Ultimo == Primero)
+            if (Primero == null)
+            {
+                return;
+            }
+
+            if (Primero.Codigo == Codigo && Ultimo == Primero)
             {
                 Primero = null;
                 Ultimo = null;
             }
             else
             {
-                if(Primero.Codigo == Codigo)
+                if (Primero.Codigo == Codigo)
                 {
-                    Primero = Primero = Primero.Siguiente;
-                    Primero.Anterior = null;
+                    Primero = Primero.Siguiente;
+
+                    if (Primero != null)
+                    {
+                        Primero.Anterior = null;
+                    }
                 }
                 else
                 {
-                    if(Ultimo.Codigo == Codigo)
+                    if (Ultimo.Codigo == Codigo)
                     {
                         Ultimo = Ultimo.Anterior;
-                        Ultimo.Siguiente = null;
+
+                        if (Ultimo != null)
+                        {
+                            Ultimo.Siguiente = null;
+                        }
                     }
                     else
                     {
                         clsNodo aux = Primero;
-                        clsNodo ant = Primero;
-                        while (aux.Codigo<Codigo)
+
+                        while (aux != null && aux.Codigo != Codigo)
                         {
-                            ant = aux;
                             aux = aux.Siguiente;
                         }
-                        aux = aux.Siguiente;
-                        ant.Siguiente = aux;
-                        aux.Anterior = ant; 
+
+                        if (aux != null)
+                        {
+                            clsNodo ant = aux.Anterior;
+                            clsNodo sig = aux.Siguiente;
+
+                            if (ant != null)
+                            {
+                                ant.Siguiente = sig;
+                            }
+
+                            if (sig != null)
+                            {
+                                sig.Anterior = ant;
+                            }
+                        }
                     }
                 }
             }
         }
 
-
         public void Recorrer(DataGridView Grilla)
         {
             clsNodo aux = Primero;
             Grilla.Rows.Clear();
+
             while (aux != null)
             {
                 Grilla.Rows.Add(aux.Codigo, aux.Nombre, aux.Tramite);
@@ -121,16 +148,19 @@ namespace PryEDDiFiniZ
         {
             clsNodo aux = Ultimo;
             Grilla.Rows.Clear();
+
             while (aux != null)
             {
                 Grilla.Rows.Add(aux.Codigo, aux.Nombre, aux.Tramite);
                 aux = aux.Anterior;
             }
         }
+
         public void Recorrer(ListBox Lista)
         {
             clsNodo aux = Primero;
             Lista.Items.Clear();
+
             while (aux != null)
             {
                 Lista.Items.Add(aux.Codigo);
@@ -142,16 +172,19 @@ namespace PryEDDiFiniZ
         {
             clsNodo aux = Ultimo;
             Lista.Items.Clear();
+
             while (aux != null)
             {
                 Lista.Items.Add(aux.Codigo);
                 aux = aux.Anterior;
             }
         }
+
         public void Recorrer(ComboBox Combo)
         {
             clsNodo aux = Primero;
             Combo.Items.Clear();
+
             while (aux != null)
             {
                 Combo.Items.Add(aux.Codigo);
@@ -163,46 +196,53 @@ namespace PryEDDiFiniZ
         {
             clsNodo aux = Ultimo;
             Combo.Items.Clear();
+
             while (aux != null)
             {
                 Combo.Items.Add(aux.Codigo);
                 aux = aux.Anterior;
             }
         }
+
         public void Recorrer(string NombreArchivo)
         {
+            if (string.IsNullOrWhiteSpace(NombreArchivo))
+                return;
             clsNodo aux = Primero;
+
             StreamWriter AD = new StreamWriter(NombreArchivo, false, Encoding.UTF8);
-            AD.WriteLine("Lista de espera\n");
+
+            AD.WriteLine("Lista de espera");
             AD.WriteLine("Codigo;Nombre;Tramite");
+
             while (aux != null)
             {
-                AD.Write(aux.Codigo);
-                AD.Write(";");
-                AD.Write(aux.Nombre);
-                AD.Write(";");
-                AD.Write(aux.Tramite);
+                AD.WriteLine(aux.Codigo + ";" + aux.Nombre + ";" + aux.Tramite);
                 aux = aux.Siguiente;
             }
+
             AD.Close();
         }
 
         public void RecorrerDes(string NombreArchivo)
         {
+            if (string.IsNullOrWhiteSpace(NombreArchivo))
+                return;
+
             clsNodo aux = Ultimo;
+
             StreamWriter AD = new StreamWriter(NombreArchivo, false, Encoding.UTF8);
-            AD.WriteLine("Lista de espera\n");
+
+            AD.WriteLine("Lista de espera");
             AD.WriteLine("Codigo;Nombre;Tramite");
+
             while (aux != null)
             {
-                AD.Write(aux.Codigo);
-                AD.Write(";");
-                AD.Write(aux.Nombre);
-                AD.Write(";");
-                AD.Write(aux.Tramite);
+                AD.WriteLine(aux.Codigo + ";" + aux.Nombre + ";" + aux.Tramite);
                 aux = aux.Anterior;
             }
+
             AD.Close();
-        }
+        } 
     }
-}
+} 

@@ -10,7 +10,7 @@ namespace PryEDDiFiniZ
 {
     internal class clsArchivo
     {
-        public string NombreArchivo = "";
+        public string NombreArchivo = " ";
 
         public void Grabar ()
         {
