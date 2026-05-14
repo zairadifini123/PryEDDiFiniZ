@@ -87,5 +87,17 @@ namespace PryEDDiFiniZ
             frmListaDoble v = new frmListaDoble();
             v.ShowDialog();
         }
+
+        private void árbolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArbolBinario v = new frmArbolBinario();
+            v.ShowDialog();
+        }
+
+        private void consultaDeUnaTablaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBdConsultaTablas v = new frmBdConsultaTablas();
+            v.ShowDialog();
+        }
     }
 }
