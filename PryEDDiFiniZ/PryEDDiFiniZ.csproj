@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsArbolBinario.cs" />
     <Compile Include="clsArchivo.cs" />
     <Compile Include="clsCola.cs" />
     <Compile Include="clsListaDoble.cs" />
@@ -69,6 +70,12 @@
     </Compile>
     <Compile Include="frmBdConsultaTablas.Designer.cs">
       <DependentUpon>frmBdConsultaTablas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBdOperaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBdOperaciones.Designer.cs">
+      <DependentUpon>frmBdOperaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCarreras.cs">
       <SubType>Form</SubType>
@@ -152,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBdConsultaTablas.resx">
       <DependentUpon>frmBdConsultaTablas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBdOperaciones.resx">
+      <DependentUpon>frmBdOperaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCarreras.resx">
       <DependentUpon>frmCarreras.cs</DependentUpon>

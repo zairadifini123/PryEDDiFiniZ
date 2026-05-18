@@ -31,26 +31,26 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArbolBinario));
             this.trvArbolBinario = new System.Windows.Forms.TreeView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtTramite = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtTramite = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbCodigo = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.cmbCodigo = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnEquilibrar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rdbInOrden = new System.Windows.Forms.RadioButton();
-            this.rdbPreOrden = new System.Windows.Forms.RadioButton();
-            this.rdbPostOrden = new System.Windows.Forms.RadioButton();
             this.dgvArbolBinario = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rdbPostOrden = new System.Windows.Forms.RadioButton();
+            this.rdbPreOrden = new System.Windows.Forms.RadioButton();
+            this.rdbInOrden = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -80,23 +80,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nuevo Elemento";
             // 
-            // label1
+            // btnAgregar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo";
+            this.btnAgregar.Location = new System.Drawing.Point(9, 123);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(150, 38);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // label2
+            // txtTramite
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre";
+            this.txtTramite.Location = new System.Drawing.Point(73, 87);
+            this.txtTramite.Name = "txtTramite";
+            this.txtTramite.Size = new System.Drawing.Size(86, 20);
+            this.txtTramite.TabIndex = 4;
+            this.txtTramite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTramite_KeyPress);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(73, 55);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(86, 20);
+            this.txtNombre.TabIndex = 3;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(73, 22);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(86, 20);
+            this.txtCodigo.TabIndex = 2;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // label3
             // 
@@ -107,35 +123,23 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Tramite";
             // 
-            // txtCodigo
+            // label2
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(73, 22);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(86, 20);
-            this.txtCodigo.TabIndex = 2;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre";
             // 
-            // txtNombre
+            // label1
             // 
-            this.txtNombre.Location = new System.Drawing.Point(73, 55);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(86, 20);
-            this.txtNombre.TabIndex = 3;
-            // 
-            // txtTramite
-            // 
-            this.txtTramite.Location = new System.Drawing.Point(73, 87);
-            this.txtTramite.Name = "txtTramite";
-            this.txtTramite.Size = new System.Drawing.Size(86, 20);
-            this.txtTramite.TabIndex = 4;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(9, 123);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(150, 38);
-            this.btnAgregar.TabIndex = 2;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Codigo";
             // 
             // groupBox2
             // 
@@ -149,14 +153,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Elemento a Eliminar";
             // 
-            // label4
+            // btnEliminar
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Codigo";
+            this.btnEliminar.Location = new System.Drawing.Point(9, 58);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(150, 27);
+            this.btnEliminar.TabIndex = 5;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // cmbCodigo
             // 
@@ -166,14 +170,14 @@
             this.cmbCodigo.Size = new System.Drawing.Size(107, 21);
             this.cmbCodigo.TabIndex = 3;
             // 
-            // btnEliminar
+            // label4
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(9, 58);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(150, 27);
-            this.btnEliminar.TabIndex = 5;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Codigo";
             // 
             // btnEquilibrar
             // 
@@ -196,39 +200,6 @@
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Listado del arbol";
-            // 
-            // rdbInOrden
-            // 
-            this.rdbInOrden.AutoSize = true;
-            this.rdbInOrden.Location = new System.Drawing.Point(6, 33);
-            this.rdbInOrden.Name = "rdbInOrden";
-            this.rdbInOrden.Size = new System.Drawing.Size(66, 17);
-            this.rdbInOrden.TabIndex = 0;
-            this.rdbInOrden.TabStop = true;
-            this.rdbInOrden.Text = "In-Orden";
-            this.rdbInOrden.UseVisualStyleBackColor = true;
-            // 
-            // rdbPreOrden
-            // 
-            this.rdbPreOrden.AutoSize = true;
-            this.rdbPreOrden.Location = new System.Drawing.Point(6, 83);
-            this.rdbPreOrden.Name = "rdbPreOrden";
-            this.rdbPreOrden.Size = new System.Drawing.Size(73, 17);
-            this.rdbPreOrden.TabIndex = 1;
-            this.rdbPreOrden.TabStop = true;
-            this.rdbPreOrden.Text = "Pre-Orden";
-            this.rdbPreOrden.UseVisualStyleBackColor = true;
-            // 
-            // rdbPostOrden
-            // 
-            this.rdbPostOrden.AutoSize = true;
-            this.rdbPostOrden.Location = new System.Drawing.Point(6, 134);
-            this.rdbPostOrden.Name = "rdbPostOrden";
-            this.rdbPostOrden.Size = new System.Drawing.Size(78, 17);
-            this.rdbPostOrden.TabIndex = 2;
-            this.rdbPostOrden.TabStop = true;
-            this.rdbPostOrden.Text = "Post-Orden";
-            this.rdbPostOrden.UseVisualStyleBackColor = true;
             // 
             // dgvArbolBinario
             // 
@@ -262,6 +233,39 @@
             this.Column3.HeaderText = "Trámite";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            // 
+            // rdbPostOrden
+            // 
+            this.rdbPostOrden.AutoSize = true;
+            this.rdbPostOrden.Location = new System.Drawing.Point(6, 134);
+            this.rdbPostOrden.Name = "rdbPostOrden";
+            this.rdbPostOrden.Size = new System.Drawing.Size(78, 17);
+            this.rdbPostOrden.TabIndex = 2;
+            this.rdbPostOrden.TabStop = true;
+            this.rdbPostOrden.Text = "Post-Orden";
+            this.rdbPostOrden.UseVisualStyleBackColor = true;
+            // 
+            // rdbPreOrden
+            // 
+            this.rdbPreOrden.AutoSize = true;
+            this.rdbPreOrden.Location = new System.Drawing.Point(6, 83);
+            this.rdbPreOrden.Name = "rdbPreOrden";
+            this.rdbPreOrden.Size = new System.Drawing.Size(73, 17);
+            this.rdbPreOrden.TabIndex = 1;
+            this.rdbPreOrden.TabStop = true;
+            this.rdbPreOrden.Text = "Pre-Orden";
+            this.rdbPreOrden.UseVisualStyleBackColor = true;
+            // 
+            // rdbInOrden
+            // 
+            this.rdbInOrden.AutoSize = true;
+            this.rdbInOrden.Location = new System.Drawing.Point(6, 33);
+            this.rdbInOrden.Name = "rdbInOrden";
+            this.rdbInOrden.Size = new System.Drawing.Size(66, 17);
+            this.rdbInOrden.TabIndex = 0;
+            this.rdbInOrden.TabStop = true;
+            this.rdbInOrden.Text = "In-Orden";
+            this.rdbInOrden.UseVisualStyleBackColor = true;
             // 
             // frmArbolBinario
             // 

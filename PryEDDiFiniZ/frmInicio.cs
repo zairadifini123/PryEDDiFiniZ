@@ -99,5 +99,28 @@ namespace PryEDDiFiniZ
             frmBdConsultaTablas v = new frmBdConsultaTablas();
             v.ShowDialog();
         }
+
+        private void grafosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGrafo v = new frmGrafo();
+            v.ShowDialog();
+        }
+
+        private void consultaDeBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBdConsultaSql v = new frmBdConsultaSql();
+            v.ShowDialog();
+        }
+
+        private void operacionesEnBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBdOperaciones v = new frmBdOperaciones();
+            v.ShowDialog();
+        }
+
+        private void consultasVariasConOperacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

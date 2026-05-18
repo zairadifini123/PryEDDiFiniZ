@@ -80,7 +80,7 @@
             this.Controls.Add(this.dgvConsultaTablas);
             this.Name = "frmBdConsultaTablas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmBdConsultaTablas";
+            this.Text = "Consulta de una Tabla";
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaTablas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
