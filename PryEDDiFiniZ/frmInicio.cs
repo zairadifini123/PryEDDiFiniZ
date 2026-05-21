@@ -120,7 +120,8 @@ namespace PryEDDiFiniZ
 
         private void consultasVariasConOperacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            frmBdRepaso v = new frmBdRepaso();
+            v.ShowDialog();
         }
     }
 }

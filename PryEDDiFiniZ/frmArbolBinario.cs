@@ -26,8 +26,9 @@ namespace PryEDDiFiniZ
             x.Tramite = txtTramite.Text;
 
             objArbolBinario.Agregar(x);
-            objArbolBinario.Recorrer(dgvArbolBinario);
+            objArbolBinario.Recorrer(dgvArbolBinario, "InOrden");
             objArbolBinario.Recorrer(cmbCodigo);
+            objArbolBinario.Recorrer(trvArbolBinario);
             MessageBox.Show("Agregado"); 
             
 
@@ -58,6 +59,30 @@ namespace PryEDDiFiniZ
             {
                 e.Handled = true; // Bloquea la tecla
             } 
+        }
+
+        private void rdbInOrden_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbInOrden.Checked == true)
+            {
+                objArbolBinario.Recorrer(dgvArbolBinario, "InOrden");
+            }
+        }
+
+        private void rdbPreOrden_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbPreOrden.Checked == true)
+            {
+                objArbolBinario.Recorrer(dgvArbolBinario, "PreOrden");
+            }
+        }
+
+        private void rdbPostOrden_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbPostOrden.Checked == true)
+            {
+                objArbolBinario.Recorrer(dgvArbolBinario, "PostOrden");
+            }
         }
     }
 }

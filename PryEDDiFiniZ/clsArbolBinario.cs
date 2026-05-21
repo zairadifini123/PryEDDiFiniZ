@@ -17,11 +17,15 @@ namespace PryEDDiFiniZ
             set { Pri = value; }
         }
 
-        public void Agregar (clsNodo Nuevo)
+        clsNodo[] Vec = new clsNodo[100];
+        int IND = 0;
+
+        public void Agregar(clsNodo Nuevo)
         {
             Nuevo.Izquierdo = null;
             Nuevo.Derecho = null;
-            if(Raiz == null)
+
+            if (Raiz == null)
             {
                 Raiz = Nuevo;
             }
@@ -29,40 +33,168 @@ namespace PryEDDiFiniZ
             {
                 clsNodo NodoPadre = Raiz;
                 clsNodo Aux = Raiz;
+
                 while (Aux != null)
                 {
                     NodoPadre = Aux;
-                    if (Nuevo.Codigo < Aux.Codigo) Aux = Aux.Izquierdo;
-                    else Aux = Aux.Derecho; 
+
+                    if (Nuevo.Codigo < Aux.Codigo)
+                    {
+                        Aux = Aux.Izquierdo;
+                    }
+                    else
+                    {
+                        Aux = Aux.Derecho;
+                    }
                 }
 
-                if (Nuevo.Codigo < NodoPadre.Codigo) NodoPadre.Izquierdo = Nuevo;
-                else NodoPadre.Derecho = Nuevo; 
+                if (Nuevo.Codigo < NodoPadre.Codigo)
+                {
+                    NodoPadre.Izquierdo = Nuevo;
+                }
+                else
+                {
+                    NodoPadre.Derecho = Nuevo;
+                }
             }
         }
 
-        public void Recorrer(DataGridView Grilla)
+        public void Recorrer(DataGridView Grilla, string Tipo)
         {
             Grilla.Rows.Clear();
-            InOrdenAsc(Grilla, Raiz);
+
+            if (Tipo == "InOrden")
+            {
+                InOrdenAsc(Grilla, Raiz);
+            }
+
+            if (Tipo == "PreOrden")
+            {
+                PreOrden(Grilla, Raiz);
+            }
+
+            if (Tipo == "PostOrden")
+            {
+                PostOrden(Grilla, Raiz);
+            }
         }
 
         private void InOrdenAsc(DataGridView Dgv, clsNodo R)
         {
-            if(R.Izquierdo != null) InOrdenAsc(Dgv, R.Izquierdo); Dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
-            if(R.Derecho != null) InOrdenAsc(Dgv,R.Derecho);
+            if (R != null)
+            {
+                if (R.Izquierdo != null)
+                {
+                    InOrdenAsc(Dgv, R.Izquierdo);
+                }
+
+                Dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
+
+                if (R.Derecho != null)
+                {
+                    InOrdenAsc(Dgv, R.Derecho);
+                }
+            }
         }
 
-        public void Recorrer(ComboBox Lista)
+        private void PreOrden(DataGridView Dgv, clsNodo R)
         {
-            Lista.Items.Clear();
-            InOrdenAsc(Lista, Raiz);
+            if (R != null)
+            {
+                Dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
+
+                PreOrden(Dgv, R.Izquierdo);
+
+                PreOrden(Dgv, R.Derecho);
+            }
         }
 
-        private void InOrdenAsc(ComboBox Lst, clsNodo R)
+        private void PostOrden(DataGridView Dgv, clsNodo R)
         {
-            if (R.Izquierdo != null) InOrdenAsc(Lst, R.Izquierdo); Lst.Items.Add(R.Codigo);
-            if (R.Derecho != null) InOrdenAsc(Lst, R.Derecho);
+            if (R != null)
+            {
+                PostOrden(Dgv, R.Izquierdo);
+
+                PostOrden(Dgv, R.Derecho);
+
+                Dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
+            }
+        }
+
+        public void Recorrer(ComboBox Combo)
+        {
+            Combo.Items.Clear();
+            InOrdenAsc(Combo, Raiz);
+        }
+
+        private void InOrdenAsc(ComboBox cmb, clsNodo R)
+        {
+            if (R != null)
+            {
+                if (R.Izquierdo != null)
+                {
+                    InOrdenAsc(cmb, R.Izquierdo);
+                }
+
+                cmb.Items.Add(R.Codigo);
+
+                if (R.Derecho != null)
+                {
+                    InOrdenAsc(cmb, R.Derecho);
+                }
+            }
+        }
+
+        public void Recorrer(TreeView tree)
+        {
+            tree.Nodes.Clear();
+
+            TreeNode NodoPadre = new TreeNode("Arbol");
+
+            tree.Nodes.Add(NodoPadre);
+
+            PreOrden(Raiz, NodoPadre);
+
+            tree.ExpandAll();
+        }
+
+        private void PreOrden(clsNodo R, TreeNode nodoTreeView)
+        {
+            if (R != null)
+            {
+                TreeNode NodoPadre = new TreeNode(R.Codigo.ToString());
+
+                nodoTreeView.Nodes.Add(NodoPadre);
+
+                if (R.Izquierdo != null)
+                {
+                    PreOrden(R.Izquierdo, NodoPadre);
+                }
+
+                if (R.Derecho != null)
+                {
+                    PreOrden(R.Derecho, NodoPadre);
+                }
+            }
+        }
+
+        public void Recorrer()
+        {
+            IND = 0;
+            InOrdenAsc(Raiz);
+        }
+
+        private void InOrdenAsc(clsNodo R)
+        {
+            if (R != null)
+            {
+                InOrdenAsc(R.Izquierdo);
+
+                Vec[IND] = R;
+                IND++;
+
+                InOrdenAsc(R.Derecho);
+            }
         }
     }
 }

@@ -77,6 +77,12 @@
     <Compile Include="frmBdOperaciones.Designer.cs">
       <DependentUpon>frmBdOperaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBdRepaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBdRepaso.Designer.cs">
+      <DependentUpon>frmBdRepaso.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCarreras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBdOperaciones.resx">
       <DependentUpon>frmBdOperaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBdRepaso.resx">
+      <DependentUpon>frmBdRepaso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCarreras.resx">
       <DependentUpon>frmCarreras.cs</DependentUpon>

@@ -244,6 +244,7 @@
             this.rdbPostOrden.TabStop = true;
             this.rdbPostOrden.Text = "Post-Orden";
             this.rdbPostOrden.UseVisualStyleBackColor = true;
+            this.rdbPostOrden.CheckedChanged += new System.EventHandler(this.rdbPostOrden_CheckedChanged);
             // 
             // rdbPreOrden
             // 
@@ -255,6 +256,7 @@
             this.rdbPreOrden.TabStop = true;
             this.rdbPreOrden.Text = "Pre-Orden";
             this.rdbPreOrden.UseVisualStyleBackColor = true;
+            this.rdbPreOrden.CheckedChanged += new System.EventHandler(this.rdbPreOrden_CheckedChanged);
             // 
             // rdbInOrden
             // 
@@ -266,6 +268,7 @@
             this.rdbInOrden.TabStop = true;
             this.rdbInOrden.Text = "In-Orden";
             this.rdbInOrden.UseVisualStyleBackColor = true;
+            this.rdbInOrden.CheckedChanged += new System.EventHandler(this.rdbInOrden_CheckedChanged);
             // 
             // frmArbolBinario
             // 
