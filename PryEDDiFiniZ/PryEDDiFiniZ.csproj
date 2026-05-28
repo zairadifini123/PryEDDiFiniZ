@@ -49,6 +49,7 @@
     <Compile Include="clsArbolBinario.cs" />
     <Compile Include="clsArchivo.cs" />
     <Compile Include="clsCola.cs" />
+    <Compile Include="clsGrafoMatricial.cs" />
     <Compile Include="clsListaDoble.cs" />
     <Compile Include="clsListaSimple.cs" />
     <Compile Include="clsNodo.cs" />

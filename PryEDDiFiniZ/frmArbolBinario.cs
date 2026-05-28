@@ -20,6 +20,15 @@ namespace PryEDDiFiniZ
         clsArbolBinario objArbolBinario = new clsArbolBinario();
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (txtCodigo.Text != null && txtNombre.Text != null && txtTramite.Text != null)
+            {
+                btnAgregar.Enabled = true;
+            }
+            else
+            {
+                btnAgregar.Enabled = false;
+            }
+
             clsNodo x = new clsNodo();
             x.Codigo = Convert.ToInt32(txtCodigo.Text);
             x.Nombre = txtNombre.Text;

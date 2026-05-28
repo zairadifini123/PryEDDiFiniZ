@@ -12,8 +12,8 @@ namespace PryEDDiFiniZ
         private String nom;
         private String tra;
         private clsNodo sig;
-        private clsNodo ant; 
-
+        private clsNodo ant;
+ 
         public Int32 Codigo
         {
             get { return cod; } 
