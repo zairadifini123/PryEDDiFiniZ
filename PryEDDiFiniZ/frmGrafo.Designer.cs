@@ -203,6 +203,7 @@
             this.btnBorrar.TabIndex = 14;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnConsultar
             // 
@@ -338,6 +339,7 @@
             this.btnVerViajes.TabIndex = 13;
             this.btnVerViajes.Text = "Ver todos los viajes";
             this.btnVerViajes.UseVisualStyleBackColor = true;
+            this.btnVerViajes.Click += new System.EventHandler(this.btnVerViajes_Click);
             // 
             // btnListarOrigenes
             // 
@@ -347,6 +349,7 @@
             this.btnListarOrigenes.TabIndex = 12;
             this.btnListarOrigenes.Text = "Listar origenes";
             this.btnListarOrigenes.UseVisualStyleBackColor = true;
+            this.btnListarOrigenes.Click += new System.EventHandler(this.btnListarOrigenes_Click);
             // 
             // cmbHasta
             // 
@@ -374,6 +377,7 @@
             this.btnListarDestinos.TabIndex = 9;
             this.btnListarDestinos.Text = "Listar Destinos";
             this.btnListarDestinos.UseVisualStyleBackColor = true;
+            this.btnListarDestinos.Click += new System.EventHandler(this.btnListarDestinos_Click);
             // 
             // cmbDesde
             // 

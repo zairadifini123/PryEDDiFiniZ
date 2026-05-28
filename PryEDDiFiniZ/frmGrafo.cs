@@ -19,6 +19,8 @@ namespace PryEDDiFiniZ
             objGrafoMatricial.MostrarCiudades(cmbDestino);
             objGrafoMatricial.MostrarCiudades(cmbConsultaOrigen);
             objGrafoMatricial.MostrarCiudades(cmbConsultaDestino);
+            objGrafoMatricial.MostrarCiudades(cmbDesde);
+            objGrafoMatricial.MostrarCiudades(cmbHasta);
         }
 
         clsGrafoMatricial objGrafoMatricial = new clsGrafoMatricial();
@@ -65,14 +67,68 @@ namespace PryEDDiFiniZ
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            Int32 origen = cmbOrigen.SelectedIndex;
-            Int32 destino = cmbDestino.SelectedIndex;
+            Int32 origen = cmbConsultaOrigen.SelectedIndex;
+            Int32 destino = cmbConsultaDestino.SelectedIndex;
 
             Decimal precio;
 
             precio = objGrafoMatricial.Consultar(origen, destino);
 
             lblPrecio.Text = precio.ToString();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            Int32 origen = cmbConsultaOrigen.SelectedIndex;
+            Int32 destino = cmbConsultaDestino.SelectedIndex;
+           
+
+            objGrafoMatricial.Eliminar(origen, destino);
+            objGrafoMatricial.MostrarTodo(dgvGrafo); 
+
+            MessageBox.Show("Eliminado");
+
+            cmbConsultaOrigen.SelectedIndex = 0;
+            cmbConsultaDestino.SelectedIndex = 0;
+            lblPrecio.Text = "";
+        }
+
+        private void btnListarDestinos_Click(object sender, EventArgs e)
+        {
+            if (cmbDesde.Text != "")
+            {
+                btnListarDestinos.Enabled = true;
+            }
+            else
+            {
+                btnListarDestinos.Enabled = false;
+            }
+      
+            Int32 destino = cmbDesde.SelectedIndex;
+            objGrafoMatricial.MostrarDestinos(destino, dgvGrafo);
+            cmbDesde.SelectedIndex = 0;
+            
+        }
+
+        private void btnListarOrigenes_Click(object sender, EventArgs e)
+        {
+            if (cmbHasta.Text != "")
+            {
+                btnListarOrigenes.Enabled = true;
+            }
+            else
+            {
+                btnListarOrigenes.Enabled = false;
+            }
+
+            Int32 origen = cmbHasta.SelectedIndex;
+            objGrafoMatricial.MostrarOrigenes(origen, dgvGrafo);
+            cmbOrigen.SelectedIndex = 0;
+        }
+
+        private void btnVerViajes_Click(object sender, EventArgs e)
+        {
+            objGrafoMatricial.MostrarTodo(dgvGrafo); 
         }
     }
 }
