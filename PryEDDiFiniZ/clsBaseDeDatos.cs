@@ -30,7 +30,7 @@ namespace PryEDDiFiniZ
                 comando.CommandType = CommandType.TableDirect;
                 comando.CommandText = "Libro";
 
-                DataSet DS = new DataSet();
+                DataSet DS = new DataSet(); 
                 adaptador = new OleDbDataAdapter(comando);
                 adaptador.Fill(DS, "Libro");
 
