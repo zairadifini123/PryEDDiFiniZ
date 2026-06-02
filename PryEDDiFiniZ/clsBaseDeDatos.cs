@@ -41,9 +41,62 @@ namespace PryEDDiFiniZ
             }
             catch (Exception e)
             {
-                MessageBox.Show("e.ToString");
+                MessageBox.Show(e.ToString());
             } 
         }
 
+        public void Listar(String tabla, DataGridView Grilla)
+        {
+            try
+            {
+                conexion.ConnectionString = CadenaConexion1;
+                conexion.Open();
+
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = tabla;
+
+                DataSet DS = new DataSet();
+                adaptador = new OleDbDataAdapter(comando);
+                adaptador.Fill(DS, tabla);
+
+                Grilla.DataSource = null;
+                Grilla.DataSource = DS.Tables[tabla];
+
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                conexion.Close();
+            }
+        }
+
+        public void Listar(DataGridView Grilla, String varInstruccionSQL)
+        {
+            try
+            {
+                conexion.ConnectionString = CadenaConexion1;
+                conexion.Open();
+
+                comando.Connection = conexion;
+                comando.CommandType = CommandType.TableDirect;
+                comando.CommandText = varInstruccionSQL;
+
+                DataSet DS = new DataSet();
+                adaptador = new OleDbDataAdapter(comando);
+                adaptador.Fill(DS, "Resultado");
+
+                Grilla.DataSource = null;
+                Grilla.DataSource = DS.Tables["Resultado"];
+
+                conexion.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                conexion.Close();
+            }
+        }
     }
 }
