@@ -16,5 +16,11 @@ namespace PryEDDiFiniZ
         {
             InitializeComponent();
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            clsBaseDeDatos objBaseDeDatos = new clsBaseDeDatos();
+            objBaseDeDatos.Listar(dgvConsultaSql, txtConsultaSql.Text);
+        }
     }
 }

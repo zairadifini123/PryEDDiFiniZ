@@ -80,7 +80,7 @@ namespace PryEDDiFiniZ
                 conexion.Open();
 
                 comando.Connection = conexion;
-                comando.CommandType = CommandType.TableDirect;
+                comando.CommandType = CommandType.Text;
                 comando.CommandText = varInstruccionSQL;
 
                 DataSet DS = new DataSet();

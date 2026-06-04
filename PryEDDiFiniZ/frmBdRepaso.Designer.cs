@@ -49,6 +49,12 @@
             // cmbOperacion
             // 
             this.cmbOperacion.FormattingEnabled = true;
+            this.cmbOperacion.Items.AddRange(new object[] {
+            "Proyeccion simple",
+            "Juntar",
+            "Interseccion",
+            "Por convolución",
+            "Diferencia"});
             this.cmbOperacion.Location = new System.Drawing.Point(291, 18);
             this.cmbOperacion.Name = "cmbOperacion";
             this.cmbOperacion.Size = new System.Drawing.Size(399, 21);
@@ -62,6 +68,7 @@
             this.btnListar.TabIndex = 2;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // lblOperacionARealizar
             // 
