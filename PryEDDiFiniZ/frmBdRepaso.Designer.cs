@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbOperacion = new System.Windows.Forms.ComboBox();
+            this.cmbOperaciones = new System.Windows.Forms.ComboBox();
             this.btnListar = new System.Windows.Forms.Button();
             this.lblOperacionARealizar = new System.Windows.Forms.Label();
             this.dgvOperacionARealizar = new System.Windows.Forms.DataGridView();
@@ -46,19 +46,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Operación a realizar en la base de datos";
             // 
-            // cmbOperacion
+            // cmbOperaciones
             // 
-            this.cmbOperacion.FormattingEnabled = true;
-            this.cmbOperacion.Items.AddRange(new object[] {
+            this.cmbOperaciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOperaciones.FormattingEnabled = true;
+            this.cmbOperaciones.Items.AddRange(new object[] {
             "Proyeccion simple",
             "Juntar",
             "Interseccion",
             "Por convolución",
             "Diferencia"});
-            this.cmbOperacion.Location = new System.Drawing.Point(291, 18);
-            this.cmbOperacion.Name = "cmbOperacion";
-            this.cmbOperacion.Size = new System.Drawing.Size(399, 21);
-            this.cmbOperacion.TabIndex = 1;
+            this.cmbOperaciones.Location = new System.Drawing.Point(291, 18);
+            this.cmbOperaciones.Name = "cmbOperaciones";
+            this.cmbOperaciones.Size = new System.Drawing.Size(399, 21);
+            this.cmbOperaciones.TabIndex = 1;
+            this.cmbOperaciones.SelectedIndexChanged += new System.EventHandler(this.cmbOperaciones_SelectedIndexChanged);
             // 
             // btnListar
             // 
@@ -94,7 +96,7 @@
             this.Controls.Add(this.dgvOperacionARealizar);
             this.Controls.Add(this.lblOperacionARealizar);
             this.Controls.Add(this.btnListar);
-            this.Controls.Add(this.cmbOperacion);
+            this.Controls.Add(this.cmbOperaciones);
             this.Controls.Add(this.label1);
             this.Name = "frmBdRepaso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -108,7 +110,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbOperacion;
+        private System.Windows.Forms.ComboBox cmbOperaciones;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.Label lblOperacionARealizar;
         private System.Windows.Forms.DataGridView dgvOperacionARealizar;

@@ -127,6 +127,7 @@
             this.btnSeleccionMultiatributo.TabIndex = 1;
             this.btnSeleccionMultiatributo.Text = "Seleccion Multiatributo";
             this.btnSeleccionMultiatributo.UseVisualStyleBackColor = true;
+            this.btnSeleccionMultiatributo.Click += new System.EventHandler(this.btnSeleccionMultiatributo_Click);
             // 
             // btnSeleccionSimple
             // 
@@ -136,6 +137,7 @@
             this.btnSeleccionSimple.TabIndex = 0;
             this.btnSeleccionSimple.Text = "Seleccion simple";
             this.btnSeleccionSimple.UseVisualStyleBackColor = true;
+            this.btnSeleccionSimple.Click += new System.EventHandler(this.btnSeleccionSimple_Click);
             // 
             // groupBox3
             // 

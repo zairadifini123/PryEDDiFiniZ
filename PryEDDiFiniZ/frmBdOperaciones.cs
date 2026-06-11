@@ -81,5 +81,24 @@ namespace PryEDDiFiniZ
                 "WHERE IDIDIOMA = 2"; 
             objBaseDeDatos.Listar(dgvOperaciones, varSQL);
         }
+
+        private void btnSeleccionSimple_Click(object sender, EventArgs e)
+        {
+            String varSQL = "SELECT * " +
+                    "FROM LIBRO " +
+                    "WHERE IDIDIOMA = 2";
+
+            objBaseDeDatos.Listar(dgvOperaciones, varSQL);
+        }
+
+        private void btnSeleccionMultiatributo_Click(object sender, EventArgs e)
+        {
+            String varSQL = "SELECT * " +
+                    "FROM LIBRO " +
+                    "WHERE IDIDIOMA = 2 " +
+                    "AND IDPAIS = 3";
+
+            objBaseDeDatos.Listar(dgvOperaciones, varSQL);
+        }
     }
 }
