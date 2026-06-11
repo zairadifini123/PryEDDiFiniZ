@@ -93,5 +93,29 @@ namespace PryEDDiFiniZ
                 objArbolBinario.Recorrer(dgvArbolBinario, "PostOrden");
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Int32 codigo = Convert.ToInt32(cmbCodigo.Text);
+
+            objArbolBinario.Eliminar(codigo);
+
+            objArbolBinario.Recorrer(dgvArbolBinario, "InOrden");
+            objArbolBinario.Recorrer(cmbCodigo);
+            objArbolBinario.Recorrer(trvArbolBinario);
+
+            MessageBox.Show("Eliminado");
+        }
+
+        private void btnEquilibrar_Click(object sender, EventArgs e)
+        {
+            objArbolBinario.Equilibrar();
+
+            objArbolBinario.Recorrer(dgvArbolBinario, "InOrden");
+            objArbolBinario.Recorrer(cmbCodigo);
+            objArbolBinario.Recorrer(trvArbolBinario);
+
+            MessageBox.Show("Árbol equilibrado");
+        }
     }
 }

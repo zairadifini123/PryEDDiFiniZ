@@ -196,5 +196,47 @@ namespace PryEDDiFiniZ
                 InOrdenAsc(R.Derecho);
             }
         }
+
+        public void Eliminar(int codigo)
+        {
+            Recorrer(); 
+
+            Raiz = null; 
+
+            for (int i = 0; i < IND; i++)
+            {
+                if (Vec[i].Codigo != codigo)
+                {
+                    Vec[i].Izquierdo = null;
+                    Vec[i].Derecho = null;
+                    Agregar(Vec[i]);
+                }
+            }
+        }
+
+        public void Equilibrar()
+        {
+            Recorrer(); 
+
+            Raiz = null;
+
+            EquilibrarArbol(0, IND - 1);
+        }
+
+        private void EquilibrarArbol(int inicio, int fin)
+        {
+            if (inicio <= fin)
+            {
+                int medio = (inicio + fin) / 2;
+
+                Vec[medio].Izquierdo = null;
+                Vec[medio].Derecho = null;
+
+                Agregar(Vec[medio]);
+
+                EquilibrarArbol(inicio, medio - 1);
+                EquilibrarArbol(medio + 1, fin);
+            }
+        }
     }
 }
